@@ -1,0 +1,690 @@
+/**
+ * CONTENTS
+ *
+ * HEADER
+ *
+ * LOW RESOLUTION
+ *
+ * MIDDLE RESOLUTION
+ *
+ * LOGO
+ *
+ * HAMBURGER ICON
+ *
+ * NAVIGATION
+ *
+ * MAIN FONT-COLOR
+ *
+ * MEDIA-OBJECT
+ *
+ * HEADINGS FONT-WEIGHT-AND-SIZE
+ *
+ * TEXT
+ *
+ * IMAGE-ANIMATION
+ *
+ * CAROUSEL-ANIMATION
+ *
+ * SIDEBAR
+ *
+ * FOOTER
+ *
+ * GUITAR-ANIMATION
+ *
+ * CAROUSEL-JQUERY
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #HEADER
+\*------------------------------------*/
+
+.header {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+}
+
+
+@media screen and (max-width: 992px) {
+  .header {
+    display: inline-block;  
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #LOW RESOLUTION
+\*------------------------------------*/
+
+.lowresolution {
+  display: inline-block;  
+}
+
+
+@media screen and (max-width: 576px) {
+  .lowresolution {
+    display:         flex;
+    justify-content: space-between;   
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #MIDDLE RESOLUTION
+\*------------------------------------*/
+
+.middleresolution {
+  display: inline-block;  
+}
+
+
+@media screen and (max-width: 992px) {
+  .middleresolution {
+    display:         flex;
+    justify-content: space-between;  
+  }
+}
+
+
+@media screen and (max-width: 576px) {
+  .middleresolution {
+    display: block 
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #LOGO
+\*------------------------------------*/
+
+.logo {
+  display:     block;
+  margin-left: 5px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .logo img {
+    height: 70px;
+  }
+}	
+
+
+@media screen and (max-width: 576px) {
+  .logo {
+    display: inline-block;
+  }
+}	
+  
+  
+ 
+
+ 
+/*------------------------------------*\
+  #HAMBURGER ICON
+\*------------------------------------*/
+
+.navbarNav {
+  display:          none;
+  cursor:           pointer;
+  padding:          12px;
+  margin:           18px 5px;
+  background-color: #62b38d;
+  transition:       background-color .6s
+}
+
+.navbarNav.active {
+  background-color: var(--nav-link-secondary-color);
+  box-shadow:       inset 0 0 10px rgba(0,0,0,0.2);
+  transition:       background-color .6s
+}
+
+  .fa-bars {
+    font-size: 1.4em;
+  }
+  
+  .icon-bar {
+    background-color: #fff200;
+    display:          block;
+    width:            22px;
+    height:           2px;
+  }
+  
+  .icon-bar + .icon-bar {
+	margin-top: 4px;
+  }	  
+
+  
+@media screen and (max-width: 576px) {
+  .navbarNav {
+    display: inline-block;
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #NAVIGATION
+\*------------------------------------*/
+
+/**
+ * These rules extend `.navigation__link {}` in base.css.
+ */
+ 
+ /**
+ * 5) When the mouse pointer hovers over the navigation key, the background color 
+ * changes.
+ */
+ 
+.navigation__link--active {
+  font-weight:      bold;
+  background-color: var(--bg-primary-color);
+  color:            #ff0000;
+}
+
+
+.navigation__link--noactive {
+  background-color: var(--bg-secondary-color);
+  color:            var(--primary-font-color);
+}
+
+
+.navigation__link--bg-color:hover {
+  background-color: var(--nav-link-primary-color); /* [5] */
+}	
+
+
+
+
+
+/*------------------------------------*\
+  #MAIN FONT-COLOR
+\*------------------------------------*/
+
+/**
+ * These rules extend `.main {}` in base.css.
+ */
+
+.main--font-color {
+  color: var(--primary-font-color);
+}
+
+
+
+
+
+/*------------------------------------*\
+  #MEDIA-OBJECT
+\*------------------------------------*/
+
+.media-object {
+  border: 2px solid var(--primary-color);
+  margin: 0 0 1rem 0;
+}
+
+  .media-headline {
+    font-size:       35px;
+    padding-top:     1rem;
+    display:         flex;
+    justify-content: center; 
+  }
+
+
+  .media-content  {
+    max-width:   100%;
+    padding:     0 2rem;
+    display:     flex;
+    align-items: flex-start; 
+  }
+  
+  
+  .media-sub-content {
+    margin-bottom: 1rem;
+  }
+	
+    .image-left {
+       width:  390px;
+       height: 360px;
+    }
+
+
+    .image-right {
+      order:  1;
+      width:  390px; 
+      height: 360px;
+    }
+
+
+    .media-text {
+      font-size:    25px;
+      font-family:  'Noto Sans', sans-serif;
+      text-align:   justify;
+      text-justify: inter-word;
+      padding:      0 2rem;
+      flex:         1;
+    }
+
+  
+@media screen and (max-width: 992px) {
+  .main__media-object {
+    padding: 15px;
+  }
+
+    .media-content {
+      display:         flex;
+	  justify-content: center;
+      flex-wrap:       wrap;
+	  padding:         0 2rem;
+    }
+	
+	
+    .media-sub-content {
+	  flex-wrap: wrap-reverse;
+	  margin:    0 0 0 1rem
+    }
+  
+      .text__media-object {
+        width: 90%;
+      }
+
+	  
+      .media-text {
+        padding: 0 2rem;
+      }
+}
+
+
+@media screen and (max-width: 576px) {
+  .main__media-object {
+    padding: 0;
+  }
+	
+    .media-object {
+      width: 96%;
+    }
+	
+	  .media-content  {
+        padding: 0;
+      }
+
+	  
+      .media-sub-content {
+        margin: 0;
+      }
+  
+        .media-sub-image {
+          margin-right: 10px;
+        }
+
+	
+	    .image-left {
+          width:  300px;
+          height: 270px;
+        }
+
+
+        .image-right {
+          order:  1;
+          width:  300px; 
+          height: 270px;
+        }
+
+	  
+        .text__media-object {
+          width: 98%;
+        }
+
+	  
+        .media-text {
+          padding: 0;
+        }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #HEADINGS FONT-WEIGHT-AND-SIZE
+\*------------------------------------*/
+
+/**
+ * These rules extend `.main-title {}` in base.css.
+ */
+ 
+  /**
+ * 1) Specifying the minimum, current, maximum values ​​of title bar font size. 
+ *
+ */
+
+.main-title--fn-weight-size {
+  font-size:   clamp(28px, 5vw, 46px); /* [1] */
+  font-weight: bold;
+  text-align:  center;
+}
+ 
+ 
+ 
+ 
+ 
+/*------------------------------------*\
+  #TEXT
+\*------------------------------------*/
+
+.text {
+  margin: 0 auto;
+  width:  90%;
+}
+
+  .text--small {
+    font-size:      8px;
+    text-transform: uppercase;
+  }
+
+	
+  .text--highlighted {
+    font-size:      1.7rem;
+    letter-spacing: 2px;
+  }
+
+	
+  .text--inter-word{
+    text-align:     justify;
+    text-justify:   inter-word;
+    padding-bottom: 1rem;
+  }
+  
+  
+  .text--center{
+    text-align: center;
+  }
+
+
+
+
+	
+/*------------------------------------*\
+  #IMAGE-ANIMATION
+\*------------------------------------*/	
+
+/**
+ * The images on the page can have two different states:
+ *
+ * A) A regular image with the base size and no shadow.
+ * B) A hover image with an increased size and a shadow.
+ *
+ */
+
+/**
+ * 1) These properties ensure that the image is alone.
+ * 2) When an image has hovered over, a transition is applied:
+ *   - to the change of every property of the specific image;
+ *   - taking 0.5 second;
+ *   - starting quickly and ending slowly;
+ *   - being delayed by 0.1 second.
+ * 3) When an image has hovered over, its size increases by one-tenth.
+ * 4) When an image has hovered over, it gets a shadow with:
+ *   - a horizontal offset of 5 pixels;
+ *   - a vertical offset of 10 pixels;
+ *   - no spread;
+ *   - grey color.
+ */
+	
+.image {
+  display:        block; /* [1] */
+  vertical-align: top; /* [1] */
+  margin:         20px 5px 20px 5px;
+  height:         400px;
+  text-align:     center;
+  cursor:         default;
+  transition:     all .5s ease-out .1s; /* [2] */
+}
+
+  .image:hover {
+    box-shadow: 3px 6px 3px 0 grey; /* [3] */
+    transform:  scale(1.1); /* [4] */
+  }
+	
+@media screen and (max-width: 992px) {
+  .image {
+    height: 300px;
+  }
+}	
+
+
+@media screen and (max-width: 576px) {
+  .image {
+    height: 200px;
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #CAROUSEL-ANIMATION
+\*------------------------------------*/
+
+/**
+ * The images on the page can have continuous states:
+ *
+ * A) Continuous animated image sequences.
+ *
+ */
+
+/**
+ * These rules extend `.carousel {}` in base.css.
+ */
+ 
+ /**
+ * 1) Fill in the available space completely.
+ * 2) The page loads and then applies a transition to series of images:
+ *   - the to change the properties of images;
+ *   - taking 40 seconds;
+ *   - linear starts and ends evenly;
+ *   - being delayed by 0.1 second.
+ * 3) within the box, the content varies on a parameter:
+ *   - periodically jumps to the next image;
+ * 4) The image Grayscale 75% set.
+ * 5) The carousel box edge is get shadow:
+ *   - a horizontal offset of 0 pixels;
+ *   - a vertical offset of 0 pixels;
+ *   - spread by 22 pixels;
+ *   - set 0.2 shades.
+ */
+	
+.carousel-css--box-shadow { 
+  box-shadow: inset 0 0 22px rgba(0,0,0,0.2); /* [5] */
+}
+		
+.carousel-animation {
+  width:     100%; /* [1] */
+  height:    100%; /* [1] */
+  filter:    grayscale(75%); /* [4] */
+  animation: carousel 40s linear .1s infinite normal both; /* [2] */
+}
+
+
+@keyframes carousel {
+  0%    {content:   url(../assets/images/men-723557_960_720.jpg);} /* [3] */
+  10%   {content:   url(../assets/images/men-723557_960_720.jpg);} /* [3] */
+  30%   {content:   url(../assets/images/cheers-204742_960_720.jpg);} /* [3] */
+  55%   {content:   url(../assets/images/cheers-2047467_960_720.jpg);} /* [3] */
+  75%   {content:   url(../assets/images/guitar-1245856_960_720.jpg);} /* [3] */
+  100%  {content:   url(../assets/images/knight-778087_960_720.jpg);} /* [3] */
+}	
+
+
+
+
+
+/*------------------------------------*\
+  #SIDEBAR
+\*------------------------------------*/
+
+/**
+ * These rules extend `.sidebar {}` in base.css.
+ */
+
+.sidebar--outer-part {
+  background-color: var(--bg-secondary);
+  color:            var(--secondary-font-color);
+}
+
+
+
+
+
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+
+/**
+ * These rules extend `.footer {}` in base.css.
+ */
+
+.footer--outer-part {
+  background-color: var(--bg-primary-color);
+  color:            var(--secondary-font-color);
+}  
+  
+
+
+  
+  
+/*------------------------------------*\
+  #GUITAR-ANIMATION
+\*------------------------------------*/
+
+/**
+ * The image on the page can have continuous states:
+ *
+ * A) Starting animated image is absolute, which is fixed at the bottom and then 
+ * move to the right. Transformation rotates and eventually sets the opacity to 
+ * null.
+ *
+ */
+
+/**
+ * 1) The image path and absolute position.
+ * 2) The page loads and then applies a transition to the image:
+ *   - to the change of every property of the specific image;
+ *   - taking 6 second;
+ *   - linear starts and ends evenly;
+ *   - being delayed by 0.1 second;
+ *   - once of run down;
+ * 3) Animate based on these values:
+ *   - a bottom offset of 10%;
+ *   - a right offset as plus 2% parts;
+ *   - transform rotate as minus 5 deg parts;
+ */
+
+.guitar {
+  content:   url(../assets/images/guitar.png); /* [1] */
+  position:  absolute; /* [1] */
+  width:     100px;
+  height:    80px;
+  animation: guitar 6s linear .1s 1 alternate both; /* [2] */
+}
+
+
+@keyframes guitar {
+  0%    {bottom: 10%; right: 0%; transform: rotate(10deg);} /* [3] */
+  25%   {bottom: 10%; right: 4%; transform: rotate(5deg);} /* [3] */
+  40%   {bottom: 10%; right: 6%; transform: rotate(0deg);} /* [3] */
+  55%   {bottom: 10%; right: 4%; transform: rotate(-5deg);} /* [3] */
+  70%   {bottom: 10%; right: 0%; transform: rotate(-10deg);} /* [3] */
+  100%  {bottom: 10%; right: 0%; opacity: 0;} /* [3] */
+}
+
+
+
+
+
+/*------------------------------------*\
+  #CAROUSEL-JQUERY
+\*------------------------------------*/
+
+
+div.carousel {
+	width: 44rem;
+}
+
+
+div.carosmki {
+  display: none;
+}
+
+
+div.carouselmpho {
+  display: none;
+}
+
+
+.headi1 {
+  font-size: 16px;
+  position:  relative;
+  top:       92px;
+  left:      88px;	
+  cursor: default;
+}
+
+
+@media screen and (max-width: 992px) {
+  div.carousel {
+    display: none;
+  }
+
+
+  div.carosmki {
+    display: block;
+    width:   380px;
+  }
+
+
+  .headi1 {
+    font-size: 8px;
+    position:  relative;
+    top:       45px;
+    left:      58px;
+    cursor: default;
+  }
+}
+
+	
+	
+@media screen and (max-width: 576px) {
+  div.carosmki {
+    display: none;
+  }
+
+
+  div.carouselmpho {
+    display: block;
+  }
+
+
+  .headi1 {
+    font-size: 8px;
+    position:  relative;
+    top:       45px;
+    left:      24px;
+    cursor: default;
+  }
+}

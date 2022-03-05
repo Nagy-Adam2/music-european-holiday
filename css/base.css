@@ -1,0 +1,382 @@
+/**
+ * OVERVIEW
+ *
+ * This project is separated to the following style sheets:
+ *
+ * normalize.min.css....CSS reset.
+ * base.css.............Global rules and helpers.
+ * layout.css...........CSS rules that control the layout of the page.
+ * components.css.......Own CSS for the components that build up the page.
+ */
+
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Variables........................Globally-available variables.
+ * Box-sizing.......................Better default `box-sizing`.
+ * Margins..........................Top and bottom margins global values.
+ * Paddings.........................In all directions paddings of global values.
+ *
+ * BASE STYLES
+ * Base background-image............Base background-image.
+ * Base font........................Base font style.
+ * Navigation.......................Structure of buttons on the navigation link.
+ * Main.............................The main part structure.
+ * Headings.........................H2, H3 styles.
+ * Carousel-css.....................The internal structure of the carousel part.
+ * Sidebar..........................The sidebar with a flex look.
+ * Footer...........................The footer with a flex look and middle element.
+ *
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+
+:root {
+  --primary-color:            #6bf56b;
+  --secondary-color:          #0c26b2;
+  --primary-font-color:       #00008b;
+  --secondary-font-color:     #373737;
+  --bg-primary-color:         #add8e6;
+  --bg-secondary-color:       #90ee90;
+  --nav-link-primary-color:   #d3d3d3;  
+  --nav-link-secondary-color: #52af52;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #BOX-SIZING
+\*------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #MARGINS
+\*------------------------------------*/
+
+.main-nav, 
+.carousel,
+.footer 
+{
+  margin: .5em 0;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #PADDINGS
+\*------------------------------------*/
+
+.main,
+.carousel,
+.sidebar,
+.footer {
+  padding: 15px;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #BASE BACKGROUND-IMAGE
+\*------------------------------------*/
+
+.main-container {
+  background-image:      URL('../assets/images/background.jpg');
+  background-color:      #cce1fe;
+  background-repeat:     repeat;
+  background-attachment: fixed;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #BASE FONT
+\*------------------------------------*/
+
+ /**
+ * 1) Specify the minimum, current minimum values ​​for the title bar font size 
+ * when resizing the window.
+ *
+ */
+
+.main-container {
+  font-size:   min(3.2vw, 14px); /* [1] */
+  font-family: "Raleway", sans-serif;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #NAVIGATION
+\*------------------------------------*/
+
+ /**
+ * The navigation links on the page can have two different states:
+ *
+ * A) A regular navigation link with the normal background color and no inset.
+ * B) Floating navigation link with 6-second background color delay and inset.
+ *
+ */
+
+ /**
+ * Extend `.navigation__link--active {}, .navigation__link--noactive {}, 
+ * .navigation__link--bg-color:hover` in components.css.
+ */
+ 
+/**
+ * 1) These properties ensure that the navigation links are next to each other in 
+ * the middle.
+ * 2) When a navigation link has hovered over, it's delayed .6 seconds for 
+ * background color.
+ * 3) When a navigation link has hovered over, it gets a shadow with:
+ *   - Gets a shadow with the indentation;
+ *   - You get a value of 10 pixels;
+ *   - set 0.2 shades;
+ */
+
+.navigation {
+  display:      inline-block;
+  margin-right: 5px;
+} 
+
+   .navigation__ul {
+    display:      flex;
+    padding-left: 0px;
+  }
+
+  
+  .language__ul {
+    display: none;
+  }
+  
+    .navigation__li {
+      display:         flex;
+      justify-content: center;
+	  margin-left:     5px;
+      width:           100%;
+      cursor:          pointer;  
+    }
+
+
+    .language__li {
+      display:         flex;
+      justify-content: center;
+      width:           100%;
+      cursor:          pointer;  
+    }
+
+	
+    .language__lg__li {
+		display: block;
+	}
+
+      .navigation__link {
+        display:         flex; /* [1] */
+        justify-content: center; /* [1] */
+		padding:         22px 28px;
+		text-decoration: none;
+        width:           100%;
+      }
+
+	  
+	  .navigation__width{
+        width: 8.5rem;
+      }
+	  
+	  
+      .language__link {
+	    margin:  0 4px;
+	    padding: 7px 22px;
+      }
+
+
+      .navigation__link:hover {
+        transition: background-color .6s; /* [2] */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.2); /* [3] */
+      }
+
+
+@media screen and (max-width: 992px) {
+  .navigation {
+    display:      block;
+    margin-right: 0;
+  }
+ 
+    .language__ul {
+      display:       inline-block;
+	  padding-left:  0;
+	  margin-bottom: 0;
+    }
+	
+	.navigation__ul {
+      display: block;
+    }
+
+      .navigation__li {
+	    margin-left:   0;
+		margin-bottom: 4px;
+      }
+	  
+	  .language__lg__li {
+		display: none;
+	  }
+	  
+      .language__link {
+        margin-right: 8px;
+        padding:      16px 32px;
+      }
+	  
+	    .navigation__width{
+          width: 100%;
+        }	  
+}
+
+
+@media screen and (max-width: 576px) { 
+  .navigation {
+    display: none;
+  }
+  
+    .language__ul {
+      width:         100%;
+      margin-bottom: 4px;
+    } 
+	
+      .language__li {
+        display:         flex;
+        justify-content: space-around;
+      }
+  
+      .language__lg__li {
+        display: none;
+      }
+  
+      .navigation__li {
+        margin-bottom: 18px;
+      }
+	
+        .language__link {
+          margin:  0;
+          padding: 22px 28px;
+        }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #MAIN
+\*------------------------------------*/
+
+ /**
+ * Extend `.main--font-color {}` in components.css.
+ */
+
+.main {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+}
+ 
+
+ 
+ 
+ 
+ /*------------------------------------*\
+  #HEADINGS
+\*------------------------------------*/
+
+ /**
+ * Extend `.main-title--fn-weight-size {}` in components.css.
+ */
+ 
+ /**
+ * 1) Specify the minimum, current minimum values ​​for the title bar font size 
+ * when resizing the window.
+ *
+ */
+
+.main-title {
+  display: block; 
+  margin:  min(7vh, 2.75rem) 0 1.05rem; /* [1] */
+}
+
+	
+	
+	
+	
+/*------------------------------------*\
+  #CAROUSEL-CSS
+\*------------------------------------*/
+
+.carousel-css {
+  display:         flex;
+  justify-content: center;
+  flex-wrap:       wrap;
+  margin-top:      50%;
+  padding:         2px;
+  width:           248px;
+  height:          156px;
+}
+
+@media screen and (max-width: 576px) { 
+  .carousel-css {
+    margin: 0 auto 0 auto;
+  }
+}
+
+
+
+/*------------------------------------*\
+  #SIDEBAR
+\*------------------------------------*/
+
+ /**
+ * Extend `.sidebar--outer-part {}` in components.css.
+ */
+
+.sidebar {
+  display: flex;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+
+ /**
+ * Extend `.footer--outer-part {}` in components.css.
+ */
+
+.footer {
+  display:         flex;
+  justify-content: center;
+}
